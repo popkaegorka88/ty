@@ -1,4 +1,4 @@
-// Утилита для показа уведомлений
+
 function showToast(message) {
     let container = document.querySelector('.toast-container');
     if (!container) {
@@ -19,7 +19,6 @@ function showToast(message) {
     }, 2500);
 }
 
-// Закрытие карточек (языки и преподаватели)
 document.addEventListener('DOMContentLoaded', () => {
     const closeButtons = document.querySelectorAll('.close-card-btn');
     
@@ -35,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.remove();
                     showToast(`✓ Карточка "${name}" закрыта`);
                     
-                    // Если сетка опустела, покажем сообщение
                     const grid = card.parentElement;
                     if (grid && grid.children.length === 0) {
                         const emptyMsg = document.createElement('div');
@@ -50,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Кнопка "Смотреть больше" на главной
     const watchBtn = document.getElementById('watchMoreBtn');
     if (watchBtn) {
         watchBtn.addEventListener('click', () => {
@@ -61,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Форма пробного урока
     const trialForm = document.getElementById('trialForm');
     if (trialForm) {
         trialForm.addEventListener('submit', (e) => {
@@ -74,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Плавная анимация при загрузке страницы
 window.addEventListener('load', () => {
     document.body.style.opacity = '0';
     document.body.style.transition = 'opacity 0.3s';
